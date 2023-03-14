@@ -46,7 +46,7 @@ const renderComments = (data, itemId) => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log(form);
-    setComments(form, itemId);
+    setComments(itemId, form.name.value, form.insights.value);
   });
 };
 const renderFoodComments = (commets) => {

@@ -17,8 +17,8 @@ const postComments = async (item_id, username, comment) => {
     },
   });
 };
-const setComments = (data, itemId) => {
-  postComments(itemId, data.name.value, data.insights.value).then(()=>{
+const setComments = (itemId, name, insights) => {
+  postComments(itemId, name, insights).then(()=>{
     loadComments(itemId);
   });
 };
