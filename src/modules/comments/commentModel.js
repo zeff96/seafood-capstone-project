@@ -1,21 +1,11 @@
-import getCommentFoodItem from "./commentSFood";
-import {renderComments, renderFoodComments} from "./renderComments";
-import getComments from "./getComments.js";
+import getCommentFoodItem from './commentSFood';
+import { renderComments, loadComments } from './renderComments';
 
 const commentsModel = (itemId) => {
-getCommentFoodItem(itemId).then((data) => {
-  // console.log(data);
-  renderComments(data,itemId);
-  loadComments(itemId);
-  
-});
-};
-
-const loadComments = (itemId) => {
-  getComments(itemId).then(data => {
-    // console.log(data);
-    renderFoodComments(data);
+  getCommentFoodItem(itemId).then((data) => {
+    renderComments(data, itemId);
+    loadComments(itemId);
   });
 };
 
-export {commentsModel, loadComments};
+export default commentsModel;
