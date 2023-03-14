@@ -1,4 +1,4 @@
-import displayReservations from './displayReservations';
+import displayReservations from './displayReservation.js';
 
 const addReservation = async (
   idMeal,

@@ -1,3 +1,4 @@
+import { reservationsUrl } from './getApi';
 const displayReservations = async (
   idMeal,
   usernameInput,
@@ -11,13 +12,11 @@ const displayReservations = async (
   wrapper
 ) => {
   try {
-    const reserving = await fetch(
-      `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rnj8XMRPiQ7GI8jXwBi5/reservations?item_id=${idMeal}`
-    );
+    const reserving = await fetch(reservationsUrl + '?item_id=' + idMeal);
     const reserve = await reserving.json();
 
     reservationsHeader.innerText = `Reservations (${reserve.length})`;
-    reservationsHeader.classList = 'comment';
+    reservationsHeader.classList = 'reservation';
     wrapper.appendChild(reservationsHeader);
 
     if (reserving.status === 400) {
@@ -32,7 +31,7 @@ const displayReservations = async (
     reserve.map((data) => {
       const { username, date_start, date_end } = data;
       const reservationsInput = document.createElement('p');
-      reservationsInput.classList = 'comments';
+      reservationsInput.classList = 'reservations';
 
       reservationsInput.innerText = `${date_start} to ${date_end} by ${username}`;
       wrapper.appendChild(reservationsInput);

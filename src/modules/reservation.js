@@ -1,7 +1,9 @@
 import { getSeaFoodItem, reservationsUrl } from './getApi';
+import addReservation from './addReservation.js';
 
 const reservation = async (idMeal) => {
   try {
+    idMeal = '52959';
     const reservation = document.createElement('div');
     reservation.id = 'popup';
     reservation.classList = 'popup';
@@ -25,11 +27,10 @@ const reservation = async (idMeal) => {
     popupHead.appendChild(xButton);
 
     const imagePopup = document.createElement('img');
-    const meal = await fetch(getSeaFoodItem);
+    const meal = await fetch(getSeaFoodItem + idMeal);
     const { meals } = await meal.json();
     const data = meals.find((card) => card.idMeal === idMeal);
-    const { strMeal, srtCategory, strArea, strIngredients, strMealThumb } =
-      data;
+    const { strMeal, strCategory, strArea, strMealThumb, strYoutube } = data;
     imagePopup.src = strMealThumb;
     imagePopup.classList = 'image-popup';
     imagePopup.id = 'image-popup';
@@ -48,21 +49,20 @@ const reservation = async (idMeal) => {
           <p class="meal" id="meal">Meal: ${strMeal}</p>
           <p class="meal" id="meal">Category: ${strCategory}</p>
           <p class="meal" id="meal">Area: ${strArea}</p>
-          <p class="meal" id="meal">Ingredient: ${strIngredient1}</p>
+          <p class="meal" id="meal"><a href="${strYoutube}">How to make it!</a></p>
           `;
-    const reserving = await fetch(reservationsUrl);
+    const reserving = await fetch(reservationsUrl + '?item_id=' + idMeal);
     const reserve = await reserving.json();
 
     const reservationsHeader = document.createElement('h3');
-    reservationsHeader.innerText = `Reservations (${reserve.length})`;
-    reservationsHeader.classList = 'comment';
+    reservationsHeader.innerText = `Reservations (0)`;
+    reservationsHeader.classList = 'reservation';
     const wrapper = document.createElement('div');
-    if (reserve.length === undefined) {
-      reservationsHeader.innerText = `Reservations (0)`;
-    }
+    wrapper.classList = 'reserve-counter';
+
     const reservationHeader = document.createElement('h3');
     reservationHeader.textContent = 'Add Reservation';
-    reservationHeader.classList = 'header-comment';
+    reservationHeader.classList = 'header-reservation';
 
     const reserveForm = document.createElement('form');
     reserveForm.classList = 'form';
@@ -85,7 +85,61 @@ const reservation = async (idMeal) => {
     const ReserveButton = document.createElement('button');
     ReserveButton.className = 'btn btn-top';
     ReserveButton.innerText = 'Reserve';
+    ReserveButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      addReservation(
+        idMeal,
+        usernameInput,
+        dateStart,
+        dateEnd,
+        popupWindow,
+        reservationsHeader,
+        reservationHeader,
+        ReserveButton,
+        reserveForm,
+        wrapper
+      );
+    });
+
+    wrapper.appendChild(reservationsHeader);
+
+    if (reserving.status === 400) {
+      popupWindow.appendChild(wrapper);
+      popupWindow.appendChild(reservationHeader);
+      reserveForm.appendChild(usernameInput);
+      reserveForm.appendChild(dateStart);
+      reserveForm.appendChild(dateEnd);
+      reserveForm.appendChild(ReserveButton);
+      popupWindow.appendChild(reserveForm);
+    }
+
+    if (xButton) {
+      xButton.addEventListener('click', () => {
+        reservation.remove();
+      });
+    }
+
+    reserve.map((data) => {
+      const { username, date_start, date_end } = data;
+      const reservationsInput = document.createElement('p');
+      reservationsInput.classList = 'reservations';
+
+      reservationsInput.innerText = `${date_start} to ${date_end} by ${username}`;
+      wrapper.appendChild(reservationsInput);
+      return data;
+    });
+
+    popupWindow.appendChild(detailsPopup);
+    popupWindow.appendChild(wrapper);
+    popupWindow.appendChild(reservationHeader);
+    reserveForm.appendChild(usernameInput);
+    reserveForm.appendChild(dateStart);
+    reserveForm.appendChild(dateEnd);
+    reserveForm.appendChild(ReserveButton);
+    popupWindow.appendChild(reserveForm);
   } catch (error) {
     console.error(error.message);
   }
 };
+
+export default reservation;
