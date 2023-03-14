@@ -1,6 +1,7 @@
-import { getSeaFoodItem } from "../getApi.js"
+import { getSeaFoodItem } from '../getApi';
+
 const getCommentFoodItem = async (ItemId) => {
-  const response = await fetch(getSeaFoodItem+ItemId);
+  const response = await fetch(getSeaFoodItem + ItemId);
   const data = await response.json();
   return data;
 };

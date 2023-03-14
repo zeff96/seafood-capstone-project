@@ -1,12 +1,28 @@
-import setComments from "./setComments";
-import commentCounter from "./commentCounter";
+import postComments from './setComments';
+import getComments from './getComments';
+
+const renderFoodComments = (commets) => {
+  const ulComments = document.getElementById('comments');
+  ulComments.innerHTML = '';
+  commets.forEach((element) => {
+    ulComments.innerHTML += `<li>${element.creation_date} ${element.username}: 
+    ${element.comment}</li>`;
+  });
+};
+
+const loadComments = (itemId) => {
+  getComments(itemId).then((data) => {
+    renderFoodComments(data);
+  });
+};
 
 const renderComments = (data, itemId) => {
-  const renderLocation = document.getElementById("food-container");
-  console.log(renderLocation)
+  const renderLocation = document.getElementById('food-container');
+  renderLocation.classList.remove('disable');
   renderLocation.innerHTML = `
   <div class="food">
     <div class="food-img">
+      <span id="close-comment">X</i></span>
       <img src=${data.meals[0].strMealThumb} alt="">
       <h2>${data.meals[0].strMeal}</h2>
     </div>
@@ -40,22 +56,19 @@ const renderComments = (data, itemId) => {
       </form>
     </div>
   </div>`;
-  
-  const form = document.getElementById("comments-form");
-  console.log(form);
+
+  const form = document.getElementById('comments-form');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(form);
-    setComments(form, itemId);
+    postComments(itemId, form.name.value, form.insights.value).then(() => {
+      loadComments(itemId);
+    });
+  });
+
+  const closeBtn = document.getElementById('close-comment');
+  closeBtn.addEventListener('click', () => {
+    renderLocation.classList.add('disable');
   });
 };
-const renderFoodComments = (commets) => {
-  const ulComments = document.getElementById("comments");
-  ulComments.innerHTML = "";
-  commets.forEach(element => {
-    ulComments.innerHTML += `<li>${element.creation_date} ${element.username}: 
-    ${element.comment}</li>`;
-  });
-  commentCounter();
-};
-export {renderComments, renderFoodComments};
+
+export { renderComments, renderFoodComments, loadComments };
