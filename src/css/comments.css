@@ -82,6 +82,16 @@
 .disable {
   display: none;
 }
+#close-comment{
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  cursor: pointer;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: 'Rubik', sans-serif;
+  color: black;
+}
 
 @media all and (min-width: 768px) {
   .food-container .food {
