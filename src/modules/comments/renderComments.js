@@ -15,7 +15,7 @@ const renderFoodComments = (commets) => {
 const loadComments = (itemId) => {
   getComments(itemId).then((data) => {
     renderFoodComments(data);
-  }).catch(() => {commentCounter()});
+  }).catch(() => { commentCounter(); });
 };
 
 const renderComments = (data, itemId) => {
