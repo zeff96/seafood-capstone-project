@@ -1,12 +1,12 @@
 import { commentsUrl } from '../getApi';
-import { loadComments } from './commentModel';
+// import { loadComments } from './renderComments';
 
-const postComments = async (item_id, username, comment) => {
-  const response = await fetch(commentsUrl, {
+const postComments = async (itemId, username, comment) => {
+  await fetch(commentsUrl, {
     method: 'POST',
     body: JSON.stringify(
       {
-        item_id,
+        item_id: itemId,
         username,
         comment,
       },
@@ -16,9 +16,4 @@ const postComments = async (item_id, username, comment) => {
     },
   });
 };
-const setComments = (data, itemId) => {
-  postComments(itemId, data.name.value, data.insights.value).then(() => {
-    loadComments(itemId);
-  });
-};
-export default setComments;
+export default postComments;

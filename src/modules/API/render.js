@@ -1,6 +1,6 @@
 import { getMeals, getLikes, postLikes } from './get';
 import showCounter from './counter';
-import { commentsModel } from '../comments/commentModel';
+import commentsModel from '../comments/commentModel';
 
 const list = document.querySelector('.cards-container');
 

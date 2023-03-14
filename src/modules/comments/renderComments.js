@@ -1,9 +1,24 @@
-import setComments from './setComments';
+import postComments from './setComments';
+import getComments from './getComments';
+
+const renderFoodComments = (commets) => {
+  const ulComments = document.getElementById('comments');
+  ulComments.innerHTML = '';
+  commets.forEach((element) => {
+    ulComments.innerHTML += `<li>${element.creation_date} ${element.username}: 
+    ${element.comment}</li>`;
+  });
+};
+
+const loadComments = (itemId) => {
+  getComments(itemId).then((data) => {
+    renderFoodComments(data);
+  });
+};
 
 const renderComments = (data, itemId) => {
   const renderLocation = document.getElementById('food-container');
   renderLocation.classList.remove('disable');
-  console.log(renderLocation);
   renderLocation.innerHTML = `
   <div class="food">
     <div class="food-img">
@@ -45,19 +60,15 @@ const renderComments = (data, itemId) => {
   const form = document.getElementById('comments-form');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    setComments(form, itemId);
+    postComments(itemId, form.name.value, form.insights.value).then(() => {
+      loadComments(itemId);
+    });
   });
+
   const closeBtn = document.getElementById('close-comment');
   closeBtn.addEventListener('click', () => {
     renderLocation.classList.add('disable');
   });
 };
-const renderFoodComments = (commets) => {
-  const ulComments = document.getElementById('comments');
-  ulComments.innerHTML = '';
-  commets.forEach((element) => {
-    ulComments.innerHTML += `<li>${element.creation_date} ${element.username}: 
-    ${element.comment}</li>`;
-  });
-};
-export { renderComments, renderFoodComments };
+
+export { renderComments, renderFoodComments, loadComments };

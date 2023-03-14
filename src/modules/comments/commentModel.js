@@ -1,12 +1,5 @@
 import getCommentFoodItem from './commentSFood';
-import { renderComments, renderFoodComments } from './renderComments';
-import getComments from './getComments';
-
-const loadComments = (itemId) => {
-  getComments(itemId).then((data) => {
-    renderFoodComments(data);
-  });
-};
+import { renderComments, loadComments } from './renderComments';
 
 const commentsModel = (itemId) => {
   getCommentFoodItem(itemId).then((data) => {
@@ -15,4 +8,4 @@ const commentsModel = (itemId) => {
   });
 };
 
-export { commentsModel, loadComments };
+export default commentsModel;
