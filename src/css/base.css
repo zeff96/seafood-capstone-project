@@ -1,0 +1,90 @@
+.header {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  padding-left: 4rem;
+  height: 7.2rem;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 4rem;
+  aspect-ratio: auto;
+  border-radius: 50%;
+}
+
+.navbar {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: #000;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card {
+  width: 20rem;
+  aspect-ratio: auto;
+}
+
+.thumbnail {
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+.likes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.heart {
+  cursor: pointer;
+}
+
+.btn {
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-top: 1px solid;
+}
+
+.footer-links {
+  color: #000;
+  text-decoration: none;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.fa-linkedin-in {
+  color: blue;
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
