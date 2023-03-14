@@ -1,5 +1,6 @@
 import postComments from './setComments';
 import getComments from './getComments';
+import commentCounter from './commentCounter';
 
 const renderFoodComments = (commets) => {
   const ulComments = document.getElementById('comments');
@@ -8,6 +9,7 @@ const renderFoodComments = (commets) => {
     ulComments.innerHTML += `<li>${element.creation_date} ${element.username}: 
     ${element.comment}</li>`;
   });
+  commentCounter();
 };
 
 const loadComments = (itemId) => {
@@ -42,7 +44,7 @@ const renderComments = (data, itemId) => {
       </ul>
     <div class="food-comments">
       <div class="comments-container">
-        <h3>Comments(0)</h3>
+        <h3 id="comments-counter">Comments(0)</h3>
         <ul id="comments">
         </ul>
       </div>
