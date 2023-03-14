@@ -1,30 +1,48 @@
-import { getMeals,getLikes,postLikes } from "./get";
-import showCounter from "./counter";
+import { getMeals, getLikes, postLikes } from './get';
+import showCounter from './counter';
+
 const list = document.querySelector('.cards-container');
+
+const renderLikes = () => {
+  getLikes().then((data) => {
+    data.forEach((element) => {
+      const likes = document.getElementById(`likes_${element.item_id.replace('heart_', '')}`);
+      if (likes) {
+        likes.textContent = `Likes ${element.likes}`;
+      }
+    });
+  });
+};
 
 const render = async () => {
   list.innerHTML = '';
   const results = await getMeals();
-  const cards = results.meals.splice(0,12);
+  const cards = results.meals.splice(0, 12);
   cards.forEach((card) => {
-    const card_item = `<div class="card" id="${card.idMeal}">
+    const cardItem = `<div class="card" id="${card.idMeal}">
       <img class="thumbnail" src="${card.strMealThumb}" alt="thumbnail-icon">
       <div class="container">
         <p class="title">${card.strMeal}</p>
         <div class="likes-container">
-          <button class="heart-container" type="button" data-id="${card.idMeal}">
-            <i class="fa-regular fa-heart heart"></i>
-          </button>
-          <span>Likes</span>
+          <i class="fa-regular fa-heart heart" id="heart_${card.idMeal}"></i>
+          <span id="likes_${card.idMeal}">Likes 0</span>
         </div>
       </div>
-      <button class="btn" type="button">Comments</button>
-      <button class="btn" type="button">Reversations</button>
-    `
-    list.insertAdjacentHTML('beforeend', card_item);
+      <button class="btn" type="button" id="comment_${card.idMeal}">Comments</button>
+      <button class="btn" type="button" id="reservation_${card.idMeal}">Reversations</button>
+    `;
+    list.insertAdjacentHTML('beforeend', cardItem);
 
     showCounter();
+    const mainDiv = document.getElementById(card.idMeal);
+    mainDiv.addEventListener('click', (e) => {
+      if (e.target.id === `heart_${card.idMeal}`) {
+        // console.log(e.target.id);
+        postLikes(e.target.id).then(() => { renderLikes(); });
+      }
+    });
   });
-}
+  renderLikes();
+};
 
 window.onload = render;

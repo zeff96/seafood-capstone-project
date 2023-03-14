@@ -1,13 +1,13 @@
-import { getSeaFoodUrl, likesUrl } from "../getApi";
+import { getSeaFoodUrl, likesUrl } from '../getApi';
 
 export const getMeals = async () => {
-  const res =  await fetch(getSeaFoodUrl);
-  const data =  await res.json();
+  const res = await fetch(getSeaFoodUrl);
+  const data = await res.json();
 
   if (!res.ok) return undefined;
 
   return data;
-}
+};
 
 export const getLikes = async () => {
   const likes = await fetch(likesUrl);
@@ -16,10 +16,10 @@ export const getLikes = async () => {
   if (!likes.ok) return undefined;
 
   return response;
-}
+};
 
 export const postLikes = async (id) => {
-  const likes = await fetch(likesUrl, {
+  await fetch(likesUrl, {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
@@ -27,11 +27,6 @@ export const postLikes = async (id) => {
     },
     body: JSON.stringify({
       item_id: id,
-    })
+    }),
   });
-  const response = await likes.json();
-
-  if (!likes.ok) return undefined;
-
-  return response;
-}
+};

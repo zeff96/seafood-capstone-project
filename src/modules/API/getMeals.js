@@ -5,4 +5,4 @@ const getAllData = async () => {
   return result.length;
 };
 
-export default getAllData
+export default getAllData;

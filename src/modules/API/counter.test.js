@@ -1,18 +1,18 @@
-import getAllData from "./getMeals";
+import getAllData from './getMeals';
 
 global.fetch = jest.fn(() => Promise.resolve({
   json: () => Promise.resolve(
     [
       {
         show: {
-          strMeal: "Baked salmon with fennel & tomatoes",
+          strMeal: 'Baked salmon with fennel & tomatoes',
           strMealThumb: 'https://themeldb.com/images/media/meals/1548772327.jpg',
           idMeal: '52959',
         },
       },
       {
         show: {
-          strMeal: "Cajum spiced fish tacos",
+          strMeal: 'Cajum spiced fish tacos',
           strMealThumb: 'https://themeldb.com/images/media/meals/1548772327.jpg',
           idMeal: '52819',
         },
