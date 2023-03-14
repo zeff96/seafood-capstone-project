@@ -29,9 +29,9 @@ export const postLikes = async (id) => {
       item_id: id,
     })
   });
-  const response = await likes.json();
+  // const response = await likes.json();
 
   if (!likes.ok) return undefined;
 
-  return response;
+  // return response;
 }
