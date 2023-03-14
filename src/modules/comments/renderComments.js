@@ -15,7 +15,7 @@ const renderFoodComments = (commets) => {
 const loadComments = (itemId) => {
   getComments(itemId).then((data) => {
     renderFoodComments(data);
-  });
+  }).catch(() => { commentCounter(); });
 };
 
 const renderComments = (data, itemId) => {
@@ -23,8 +23,8 @@ const renderComments = (data, itemId) => {
   renderLocation.classList.remove('disable');
   renderLocation.innerHTML = `
   <div class="food">
+  <span id="close-comment">X</i></span>
     <div class="food-img">
-      <span id="close-comment">X</i></span>
       <img src=${data.meals[0].strMealThumb} alt="">
       <h2>${data.meals[0].strMeal}</h2>
     </div>
