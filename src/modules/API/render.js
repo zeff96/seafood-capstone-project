@@ -1,5 +1,6 @@
 import { getMeals, getLikes, postLikes } from './get';
 import showCounter from './counter';
+import { commentsModel } from '../comments/commentModel';
 
 const list = document.querySelector('.cards-container');
 
@@ -39,6 +40,8 @@ const render = async () => {
       if (e.target.id === `heart_${card.idMeal}`) {
         // console.log(e.target.id);
         postLikes(e.target.id).then(() => { renderLikes(); });
+      } else if (e.target.id === `comment_${card.idMeal}`) {
+        commentsModel(card.idMeal);
       }
     });
   });
