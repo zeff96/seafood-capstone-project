@@ -82,7 +82,8 @@
 .disable {
   display: none;
 }
-#close-comment{
+
+#close-comment {
   display: flex;
   width: 100%;
   justify-content: end;
