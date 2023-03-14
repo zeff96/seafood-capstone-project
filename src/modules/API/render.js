@@ -1,25 +1,20 @@
-import { getData,getLikes,postLikes } from "./get";
+import { getMeals,getLikes,postLikes } from "./get";
+import showCounter from "./counter";
 const list = document.querySelector('.cards-container');
-const counter = document.getElementById('counter');
-
-const sumCount = async () => {
-  const data = await getData();
-  const results = data.meals.splice(0, 12);
-  counter.innerText = results.length;
-}
-sumCount();
 
 const render = async () => {
   list.innerHTML = '';
-  const results = await getData();
+  const results = await getMeals();
   const cards = results.meals.splice(0,12);
-  cards.forEach((card, index) => {
-    const card_item = `<div class="card" id="${index}">
+  cards.forEach((card) => {
+    const card_item = `<div class="card" id="${card.idMeal}">
       <img class="thumbnail" src="${card.strMealThumb}" alt="thumbnail-icon">
       <div class="container">
         <p class="title">${card.strMeal}</p>
         <div class="likes-container">
-          <i class="fa-regular fa-heart heart" data-id="${index}"></i>
+          <button class="heart-container" type="button" data-id="${card.idMeal}">
+            <i class="fa-regular fa-heart heart"></i>
+          </button>
           <span>Likes</span>
         </div>
       </div>
@@ -28,13 +23,7 @@ const render = async () => {
     `
     list.insertAdjacentHTML('beforeend', card_item);
 
-    const btnEl = document.querySelectorAll('.likes-container');
-    btnEl.forEach((btn) => btn.addEventListener('click', (e) => {
-      const target = e.target;
-      if (target.className !== 'heart') return;
-
-      console.log(target);
-    }))
+    showCounter();
   });
 }
 

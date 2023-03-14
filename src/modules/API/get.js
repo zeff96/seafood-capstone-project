@@ -1,8 +1,8 @@
 import { getSeaFoodUrl, likesUrl } from "../getApi";
 
-export const getData = async () => {
-  const res = await fetch(getSeaFoodUrl);
-  const data = await res.json();
+export const getMeals = async () => {
+  const res =  await fetch(getSeaFoodUrl);
+  const data =  await res.json();
 
   if (!res.ok) return undefined;
 
