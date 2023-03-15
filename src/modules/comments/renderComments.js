@@ -71,7 +71,7 @@ const renderComments = (data, itemId) => {
   closeBtn.addEventListener('click', () => {
     const bodyEl = document.querySelector('body');
     renderLocation.classList.add('disable');
-    bodyEl.classList.remove('no-scroll')
+    bodyEl.classList.remove('no-scroll');
   });
 };
 

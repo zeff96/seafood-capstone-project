@@ -108,7 +108,7 @@
   color: black;
 }
 
- @media all and (min-width: 768px) {
+@media all and (min-width: 768px) {
   .food-container .food {
     left: 50%;
     top: 3rem;
@@ -116,4 +116,4 @@
     height: 90vh;
     padding: 2rem;
   }
-} 
+}

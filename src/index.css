@@ -9,7 +9,7 @@
 }
 
 .card {
-  width: 20rem;
+  width: 90%;
   aspect-ratio: auto;
   border-radius: 0.8rem;
   background-color: var(--secondary-color);

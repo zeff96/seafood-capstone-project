@@ -106,13 +106,9 @@ const reservation = async (idMeal) => {
     wrapper.appendChild(reservationsHeader);
 
     if (reserving.status === 400) {
-      popupWindow.appendChild(wrapper);
-      popupWindow.appendChild(reservationHeader);
-      reserveForm.appendChild(usernameInput);
-      reserveForm.appendChild(dateStart);
-      reserveForm.appendChild(dateEnd);
-      reserveForm.appendChild(ReserveButton);
-      popupWindow.appendChild(reserveForm);
+      reserveForm.append(usernameInput, dateStart, dateEnd, ReserveButton);
+      popupWindow.append(detailsPopup, wrapper, reservationHeader, reserveForm);
+      reservationCounter();
     }
 
     if (xButton) {
