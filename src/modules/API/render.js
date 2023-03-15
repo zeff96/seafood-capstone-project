@@ -9,7 +9,7 @@ const renderLikes = () => {
   getLikes().then((data) => {
     data.forEach((element) => {
       const likes = document.getElementById(
-        `likes_${element.item_id.replace('heart_', '')}`
+        `likes_${element.item_id.replace('heart_', '')}`,
       );
       if (likes) {
         likes.textContent = `Likes ${element.likes}`;

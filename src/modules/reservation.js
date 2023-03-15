@@ -1,5 +1,5 @@
 import { getSeaFoodItem, reservationsUrl } from './getApi';
-import addReservation from './addReservation.js';
+import addReservation from './addReservation';
 
 const reservation = async (idMeal) => {
   try {
@@ -29,7 +29,9 @@ const reservation = async (idMeal) => {
     const meal = await fetch(getSeaFoodItem + idMeal);
     const { meals } = await meal.json();
     const data = meals.find((card) => card.idMeal === idMeal);
-    const { strMeal, strCategory, strArea, strMealThumb, strYoutube } = data;
+    const {
+      strMeal, strCategory, strArea, strMealThumb, strYoutube,
+    } = data;
     imagePopup.src = strMealThumb;
     imagePopup.classList = 'image-popup';
     imagePopup.id = 'image-popup';
@@ -50,11 +52,11 @@ const reservation = async (idMeal) => {
           <p class="meal" id="meal">Area: ${strArea}</p>
           <p class="meal" id="meal"><a href="${strYoutube}">How to make it!</a></p>
           `;
-    const reserving = await fetch(reservationsUrl + '?item_id=' + idMeal);
+    const reserving = await fetch(`${reservationsUrl}?item_id=${idMeal}`);
     const reserve = await reserving.json();
 
     const reservationsHeader = document.createElement('h3');
-    reservationsHeader.innerText = `Reservations (0)`;
+    reservationsHeader.innerText = 'Reservations (0)';
     reservationsHeader.classList = 'reservation';
     const wrapper = document.createElement('div');
     wrapper.classList = 'reserve-counter';
@@ -96,7 +98,7 @@ const reservation = async (idMeal) => {
         reservationHeader,
         ReserveButton,
         reserveForm,
-        wrapper
+        wrapper,
       );
     });
 
@@ -119,11 +121,11 @@ const reservation = async (idMeal) => {
     }
 
     reserve.map((data) => {
-      const { username, date_start, date_end } = data;
+      const { username, date_start: dateStart, date_end: dateEnd } = data;
       const reservationsInput = document.createElement('p');
       reservationsInput.classList = 'reservations';
 
-      reservationsInput.innerText = `${date_start} to ${date_end} by ${username}`;
+      reservationsInput.innerText = `${dateStart} to ${dateEnd} by ${username}`;
       wrapper.appendChild(reservationsInput);
       return data;
     });
