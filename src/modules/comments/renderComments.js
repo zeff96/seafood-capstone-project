@@ -64,6 +64,8 @@ const renderComments = (data, itemId) => {
     e.preventDefault();
     postComments(itemId, form.name.value, form.insights.value).then(() => {
       loadComments(itemId);
+      form.name.value = "";
+      form.insights.value = "";
     });
   });
 
