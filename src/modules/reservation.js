@@ -3,7 +3,6 @@ import addReservation from './addReservation.js';
 
 const reservation = async (idMeal) => {
   try {
-    idMeal = '52959';
     const reservation = document.createElement('div');
     reservation.id = 'popup';
     reservation.classList = 'popup';
