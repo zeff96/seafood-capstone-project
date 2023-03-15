@@ -4,23 +4,27 @@
 
 .food-container ul {
   list-style: none;
+  padding: 0;
 }
 
 .food-container h3 {
   text-align: center;
   margin-bottom: 3%;
+  font-size: 2rem;
 }
 
 .food-container {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   padding: 5% 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(2px);
+  /* backdrop-filter: blur(2px); */
+  background: #c1c7d090;
+  backdrop-filter: blur(4px);
 }
 
 .food-container .food {
@@ -40,7 +44,9 @@
   flex-direction: column;
   align-items: center;
 }
-
+.food-container .food-img .title{
+  font-size: 2rem;
+}
 .food-container .food-img img {
   width: 100%;
 }
@@ -48,6 +54,7 @@
 .food-container .food-info {
   display: flex;
   justify-content: space-between;
+  font-size: 1.2rem;
 }
 
 .food-container .comments-form {
@@ -58,15 +65,20 @@
 
 .food-container .comments-form input,
 .food-container .comments-form textarea {
-  padding: 1%;
-  font-size: 16px;
-  font-weight: 400;
-  margin-bottom: 3%;
-  border: 2px solid black;
-  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 22px;
+  font-family: 'Rubik', sans-serif;
+  letter-spacing: 2.2px;
+  border-radius: 55px 55px 55px 55px;
+  border: 2px solid #fc921a;
+  padding: 24px 41px 33px 36px;
+  background-image: linear-gradient(180deg, #fffcfc1a 0%, #ededed 100%);
+  transition: all ease-out 0.3s;
+  line-height: 20px;
 }
 
 .food-container .comments-form button {
+  margin-top: 20px;
   width: 50%;
   align-self: center;
   background-color: #5E5DF0;

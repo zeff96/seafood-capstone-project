@@ -51,9 +51,9 @@ const renderComments = (data, itemId) => {
       <form class="comments-form" id="comments-form" action="#" method="post">
       <h3>Add a Comment</h3>
         <label for="name"></label>
-        <input type="text" name="name" id="name" placeholder="Your Name">
+        <input type="text" name="name" id="name" placeholder="Your Name" required>
         <label for="insights"></label>
-        <textarea name="insights" id="insights" cols="30" rows="10" placeholder="Your Insights"></textarea>
+        <textarea name="insights" id="insights" cols="30" rows="5" placeholder="Your Insights" required></textarea>
         <button type="submit">Comment</button>
       </form>
     </div>
