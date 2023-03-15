@@ -3,6 +3,7 @@
   --secondary-color: ;
   --text-color: #000;
 }
+
 .header {
   display: flex;
   gap: 4rem;
@@ -32,9 +33,10 @@
 }
 
 .cards-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  width: 90%;
+  margin: 0 auto;
   gap: 1rem;
   margin-bottom: 3rem;
 }
@@ -87,7 +89,7 @@
 }
 
 .btn {
-  background-color: #5E5DF0;
+  background-color: #5e5df0;
   color: #fff;
   display: block;
   margin-bottom: 1rem;
@@ -107,6 +109,13 @@
   align-items: center;
   justify-content: space-around;
   border: 1px solid;
+}
+
+.about-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-links {

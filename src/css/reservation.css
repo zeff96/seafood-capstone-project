@@ -10,18 +10,18 @@
 }
 
 .window {
-  background: linear-gradient(-45deg, #ffba5f, #3da8ff);
+  background: linear-gradient(-45deg, #ffba5f, #5db1f7);
   position: absolute;
   left: 50%;
   top: 3rem;
   transform: translate(-50%, 0);
   width: 40%;
-  height: 90vh;
+  height: 85vh;
   border-radius: 10px;
   display: flex;
   padding: 2rem;
   flex-direction: column;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .image-popup {
@@ -44,6 +44,8 @@
   grid-template-columns: 1fr 1fr;
   column-gap: 60px;
   margin-top: 30px;
+
+  /* margin-left: 8rem; */
 }
 
 .details a:hover {
@@ -59,7 +61,7 @@
 
 .reservation {
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 32px;
   line-height: 44px;
   display: flex;
@@ -84,7 +86,7 @@
 
 .header-reservation {
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 28px;
   line-height: 44px;
   display: flex;
@@ -122,4 +124,9 @@
 .btn-top {
   margin-top: 20px;
   padding: 1rem 2rem;
+}
+
+.window .title {
+  font-size: 2rem;
+  text-align: center;
 }

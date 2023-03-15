@@ -89,7 +89,7 @@
   color: black;
 }
 
- @media all and (min-width: 768px) {
+@media all and (min-width: 768px) {
   .food-container .food {
     background: linear-gradient(-45deg, #ffba5f, #3da8ff);
     position: absolute;
@@ -104,4 +104,4 @@
     flex-direction: column;
     overflow: scroll;
   }
-} 
+}

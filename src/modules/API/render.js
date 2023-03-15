@@ -22,7 +22,7 @@ const renderLikes = () => {
 const render = async () => {
   list.innerHTML = '';
   const results = await getMeals();
-  const cards = results.meals.splice(1, 9);
+  const cards = results.meals.splice(1, 12);
   cards.forEach((card) => {
     const cardItem = `<div class="card" id="${card.idMeal}">
       <img class="thumbnail" src="${card.strMealThumb}" alt="thumbnail-icon">
@@ -48,10 +48,10 @@ const render = async () => {
         });
       } else if (e.target.id === `comment_${card.idMeal}`) {
         commentsModel(card.idMeal);
-        bodyEl.classList.add('no-scroll')
+        bodyEl.classList.add('no-scroll');
       } else if (e.target.id === `reservation_${card.idMeal}`) {
         reservation(card.idMeal);
-        bodyEl.classList.add('no-scroll')
+        bodyEl.classList.add('no-scroll');
       }
     });
   });
