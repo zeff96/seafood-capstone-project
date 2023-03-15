@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .popup {
   position: fixed;
   background: #c1c7d090;
@@ -96,6 +100,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .name,
@@ -104,9 +110,7 @@
   font-size: 22px;
   font-family: 'Rubik', sans-serif;
   letter-spacing: 2.2px;
-  width: 780px;
-  max-width: 390px;
-  height: 40px;
+  width: 100%;
   border-radius: 10px 10px 10px 10px;
   border: 2px solid #fc921a;
   padding: 24px 41px 33px 36px;

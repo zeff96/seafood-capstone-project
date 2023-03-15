@@ -134,12 +134,12 @@
   margin-right: 0.5rem;
 }
 
-.meals-counter{
+.meals-counter {
   position: relative;
   padding-bottom: 0.2rem;
 }
 
-.meals-counter::before{
+.meals-counter::before {
   content: "";
   position: absolute;
   width: 5rem;

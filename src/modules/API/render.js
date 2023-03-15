@@ -42,12 +42,12 @@ const render = async () => {
     const mainDiv = document.getElementById(card.idMeal);
     mainDiv.addEventListener('click', (e) => {
       if (e.target.id === `heart_${card.idMeal}`) {
-        e.target.style.color = "black";
+        e.target.style.color = 'black';
         postLikes(e.target.id).then(() => {
-          e.target.style.color = "red";
+          e.target.style.color = 'red';
           renderLikes();
-        }).catch(()=>{
-          e.target.style.color = "red";
+        }).catch(() => {
+          e.target.style.color = 'red';
         });
       } else if (e.target.id === `comment_${card.idMeal}`) {
         commentsModel(card.idMeal);

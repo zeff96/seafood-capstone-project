@@ -42,9 +42,11 @@
   flex-direction: column;
   align-items: center;
 }
-.food-container .food-img .title{
+
+.food-container .food-img .title {
   font-size: 2rem;
 }
+
 .food-container .food-img img {
   width: 100%;
 }
@@ -77,9 +79,8 @@
 
 .food-container .comments-form button {
   margin-top: 20px;
-  width: 50%;
   align-self: center;
-  background-color: #5E5DF0;
+  background-color: #5e5df0;
   color: #fff;
   display: block;
   margin-bottom: 1rem;
@@ -89,7 +90,8 @@
   border: none;
   border-radius: 0.8rem;
 }
-#comments li{
+
+#comments li {
   font-style: normal;
   font-weight: 400;
   font-size: 1.1rem;
