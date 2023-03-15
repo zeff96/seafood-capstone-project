@@ -1,4 +1,5 @@
 import { getSeaFoodItem, reservationsUrl } from './getApi';
+import reservationCounter from './reserveCounter';
 import addReservation from './addReservation';
 
 const reservation = async (idMeal) => {
@@ -56,7 +57,7 @@ const reservation = async (idMeal) => {
     const reserve = await reserving.json();
 
     const reservationsHeader = document.createElement('h3');
-    reservationsHeader.innerText = 'Reservations (0)';
+    // reservationsHeader.innerText = 'Reservations (0)';
     reservationsHeader.classList = 'reservation';
     const wrapper = document.createElement('div');
     wrapper.classList = 'reserve-counter';
@@ -138,6 +139,7 @@ const reservation = async (idMeal) => {
     reserveForm.appendChild(dateEnd);
     reserveForm.appendChild(ReserveButton);
     popupWindow.appendChild(reserveForm);
+    reservationCounter();
   } catch (error) {
     console.error(error.message);
   }
