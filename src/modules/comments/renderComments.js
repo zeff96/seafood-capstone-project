@@ -25,8 +25,8 @@ const renderComments = (data, itemId) => {
   <div class="food">
   <span id="close-comment">X</i></span>
     <div class="food-img">
-      <img src=${data.meals[0].strMealThumb} alt="">
-      <h2>${data.meals[0].strMeal}</h2>
+      <img class="image-popup" src=${data.meals[0].strMealThumb} alt="food">
+      <h2 class="title">${data.meals[0].strMeal}</h2>
     </div>
       <ul class="food-info">
         <li>
@@ -69,7 +69,9 @@ const renderComments = (data, itemId) => {
 
   const closeBtn = document.getElementById('close-comment');
   closeBtn.addEventListener('click', () => {
+    const bodyEl = document.querySelector('body');
     renderLocation.classList.add('disable');
+    bodyEl.classList.remove('no-scroll')
   });
 };
 

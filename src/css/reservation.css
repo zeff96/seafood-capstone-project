@@ -35,22 +35,8 @@
   cursor: pointer;
   font-size: 32px;
   font-weight: 700;
-  font-family: 'Rubik', sans-serif;
   display: flex;
   justify-content: flex-end;
-  color: white;
-}
-
-.title {
-  font-family: 'Rubik', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 52px;
-  line-height: 44px;
-  color: #fc921a;
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
 }
 
 .details {
@@ -60,25 +46,18 @@
   margin-top: 30px;
 }
 
-.details a {
-  color: #fc921a;
-}
-
 .details a:hover {
   color: #fff;
 }
 
 .meal {
-  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
   line-height: 44px;
-  color: #fc921a;
 }
 
 .reservation {
-  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 32px;
@@ -86,11 +65,9 @@
   display: flex;
   margin-top: 20px;
   justify-content: center;
-  color: #fc921a;
 }
 
 .reservations {
-  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -103,11 +80,9 @@
   padding: 1rem 0;
   margin-bottom: 1rem;
   border-radius: 3rem;
-  color: #fc921a;
 }
 
 .header-reservation {
-  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 28px;
@@ -115,7 +90,6 @@
   display: flex;
   margin-top: 20px;
   justify-content: center;
-  color: #fc921a;
 }
 
 .form {
@@ -146,16 +120,6 @@
 }
 
 .btn-top {
-  color: #fff;
   margin-top: 20px;
   padding: 1rem 2rem;
-  border-radius: 55px;
-  background-color: #fc921a;
-  border: 2px solid #fff;
-}
-
-.btn-top:hover {
-  background-color: #fff;
-  border: 2px solid #fc921a;
-  color: #fc921a;
 }

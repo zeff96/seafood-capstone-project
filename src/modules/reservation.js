@@ -117,7 +117,9 @@ const reservation = async (idMeal) => {
 
     if (xButton) {
       xButton.addEventListener('click', () => {
+        const bodyEl = document.querySelector('body');
         reservation.remove();
+        bodyEl.classList.remove('no-scroll');
       });
     }
 

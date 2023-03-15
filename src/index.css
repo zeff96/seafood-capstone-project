@@ -1,3 +1,36 @@
 @import './css/comments.css';
 @import './css/reservation.css';
 @import './css/base.css';
+
+:root {
+  --primary-color: rgb(212, 224, 235);
+  --secondary-color: rgb(125, 188, 240);
+  --text-color: #000;
+}
+
+.card {
+  width: 20rem;
+  aspect-ratio: auto;
+  border-radius: 0.8rem;
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  box-shadow: 5px 5px 10px rgb(43 73 100);
+}
+
+* {
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding-bottom: 3rem;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
+
+.title {
+  font-size: 1.3rem;
+}

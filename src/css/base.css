@@ -1,3 +1,8 @@
+:root {
+  --primary-color: rgb(125, 188, 240);
+  --secondary-color: ;
+  --text-color: #000;
+}
 .header {
   display: flex;
   gap: 4rem;
@@ -30,16 +35,13 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.card {
-  width: 20rem;
-  aspect-ratio: auto;
+  gap: 1rem;
+  margin-bottom: 3rem;
 }
 
 .thumbnail {
   width: 100%;
+  border-radius: 0.8rem;
   object-fit: cover;
 }
 
@@ -47,7 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .likes-container {
@@ -66,19 +68,45 @@
   font-size: 1.5rem;
 }
 
+.heart:active {
+  color: red;
+  animation: anim 0.5s ease-in-out;
+  -webkit-animation: anim 0.5s ease-in-out;
+}
+
+@keyframes anim {
+  100% {
+    transform: rotate(-15deg) scale(2);
+    -webkit-transform: rotate(-15deg) scale(2);
+    -moz-transform: rotate(-15deg) scale(2);
+    -ms-transform: rotate(-15deg) scale(2);
+    -o-transform: rotate(-15deg) scale(2);
+    filter: blur(0.5px);
+    -webkit-filter: blur(0.5px);
+  }
+}
+
 .btn {
+  background-color: #5E5DF0;
+  color: #fff;
   display: block;
   margin-bottom: 1rem;
   width: 100%;
   padding: 1rem;
   cursor: pointer;
+  border: none;
+  border-radius: 0.8rem;
+}
+
+.btn:hover {
+  background-color: #212166;
 }
 
 .footer {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-top: 1px solid;
+  border: 1px solid;
 }
 
 .footer-links {
