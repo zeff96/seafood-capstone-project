@@ -31,14 +31,14 @@ const renderComments = (data, itemId) => {
       <ul class="food-info">
         <li>
           <ul>
+          <li>Category: ${data.meals[0].strMeal}</li>
             <li>Category: ${data.meals[0].strCategory}</li>
-            <li>Area: ${data.meals[0].strArea}</li>
           </ul>
         </li>
         <li>
           <ul>
+          <li>Area: ${data.meals[0].strArea}</li>
             <li><a href=${data.meals[0].strYoutube}>How To Make</a></li>
-            <li>Power</li>
           </ul>
         </li>
       </ul>

@@ -24,7 +24,7 @@
 }
 
 .food-container .food {
-  background-color: white;
+  background: linear-gradient(-45deg, #ffba5f, #3da8ff);
   padding: 5% 5%;
   width: 90%;
   height: 90%;
@@ -32,6 +32,7 @@
   flex-direction: column;
   gap: 3%;
   overflow-y: auto;
+  border-radius: 10px;
 }
 
 .food-container .food-img {
@@ -68,10 +69,28 @@
 .food-container .comments-form button {
   width: 50%;
   align-self: center;
-  padding: 4px 10px;
-  border: 2px solid black;
-  box-shadow: 4px 4px 4px black;
-  border-radius: 5px;
+  background-color: #5E5DF0;
+  color: #fff;
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.8rem;
+}
+#comments li{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1rem;
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 5px 5px 10px rgb(43 73 100);
+  border: 1px solid #fc921a;
+  padding: 1rem 0;
+  border-radius: 3rem;
 }
 
 .disable {
@@ -91,17 +110,10 @@
 
  @media all and (min-width: 768px) {
   .food-container .food {
-    background: linear-gradient(-45deg, #ffba5f, #3da8ff);
-    position: absolute;
     left: 50%;
     top: 3rem;
-    transform: translate(-50%, 0);
     width: 40%;
     height: 90vh;
-    border-radius: 10px;
-    display: flex;
     padding: 2rem;
-    flex-direction: column;
-    overflow: scroll;
   }
 } 
