@@ -50,9 +50,7 @@
 
 ## Live Demo
 
-Live demo will be available soon
-
-<!-- - Live: [Check it here]() -->
+[Live Demo](https://zeff96.github.io/Seafood-capstone-project/dist/)
 
 ## Getting Started
 
