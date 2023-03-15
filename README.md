@@ -1,4 +1,4 @@
-![](./src/Asset/logo.png)
+![](./src/Asset/redmefish.png)
 
 ### Seafood-capstone
 
