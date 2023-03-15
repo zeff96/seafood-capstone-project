@@ -1,4 +1,4 @@
-import { getSeaFoodItem, reservationsUrl } from './getApi';
+import { getSeaFoodItem, reservationsUrl } from '../getApi';
 import reservationCounter from './reserveCounter';
 import addReservation from './addReservation';
 

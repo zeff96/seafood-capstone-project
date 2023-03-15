@@ -109,7 +109,7 @@
   width: 780px;
   max-width: 390px;
   height: 40px;
-  border-radius: 55px 55px 55px 55px;
+  border-radius: 10px 10px 10px 10px;
   border: 2px solid #fc921a;
   padding: 24px 41px 33px 36px;
   background-image: linear-gradient(180deg, #fffcfc1a 0%, #ededed 100%);

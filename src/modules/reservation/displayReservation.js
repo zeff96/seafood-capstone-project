@@ -1,4 +1,4 @@
-import { reservationsUrl } from './getApi';
+import { reservationsUrl } from '../getApi';
 
 const displayReservations = async (
   idMeal,

@@ -10,6 +10,8 @@
   align-items: center;
   padding-left: 4rem;
   height: 7.2rem;
+  border-bottom: 1px solid black;
+  margin-bottom: 3rem;
 }
 
 .logo-link {
@@ -68,10 +70,11 @@
 .heart {
   cursor: pointer;
   font-size: 1.5rem;
+  color: red;
 }
 
 .heart:active {
-  color: red;
+  color: black;
   animation: anim 0.5s ease-in-out;
   -webkit-animation: anim 0.5s ease-in-out;
 }
@@ -129,4 +132,17 @@
   color: blue;
   font-size: 2rem;
   margin-right: 0.5rem;
+}
+
+.meals-counter{
+  position: relative;
+  padding-bottom: 0.2rem;
+}
+
+.meals-counter::before{
+  content: "";
+  position: absolute;
+  width: 5rem;
+  border: 1px solid black;
+  bottom: 0;
 }
