@@ -1,13 +1,16 @@
 import { getMeals, getLikes, postLikes } from './get';
 import showCounter from './counter';
 import commentsModel from '../comments/commentModel';
+import reservation from '../reservation';
 
 const list = document.querySelector('.cards-container');
 
 const renderLikes = () => {
   getLikes().then((data) => {
     data.forEach((element) => {
-      const likes = document.getElementById(`likes_${element.item_id.replace('heart_', '')}`);
+      const likes = document.getElementById(
+        `likes_${element.item_id.replace('heart_', '')}`,
+      );
       if (likes) {
         likes.textContent = `Likes ${element.likes}`;
       }
@@ -39,9 +42,13 @@ const render = async () => {
     mainDiv.addEventListener('click', (e) => {
       if (e.target.id === `heart_${card.idMeal}`) {
         // console.log(e.target.id);
-        postLikes(e.target.id).then(() => { renderLikes(); });
+        postLikes(e.target.id).then(() => {
+          renderLikes();
+        });
       } else if (e.target.id === `comment_${card.idMeal}`) {
         commentsModel(card.idMeal);
+      } else if (e.target.id === `reservation_${card.idMeal}`) {
+        reservation(card.idMeal);
       }
     });
   });
