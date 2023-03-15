@@ -16,13 +16,11 @@
 .food-container {
   position: fixed;
   inset: 0;
-  /* background-color: rgba(0, 0, 0, 0.5); */
   padding: 5% 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* backdrop-filter: blur(2px); */
   background: #c1c7d090;
   backdrop-filter: blur(4px);
 }

@@ -57,7 +57,6 @@ const reservation = async (idMeal) => {
     const reserve = await reserving.json();
 
     const reservationsHeader = document.createElement('h3');
-    // reservationsHeader.innerText = 'Reservations (0)';
     reservationsHeader.classList = 'reservation';
     const wrapper = document.createElement('div');
     wrapper.classList = 'reserve-counter';
