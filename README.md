@@ -1,6 +1,11 @@
-![](./src/Asset/redmefish.png)
+<div align="center">
 
-### Seafood-capstone
+  <img src="./src/Asset/logo.png" alt="logo" width="140"  height="auto" />
+  <br/>
+
+  <h1><b>Seafood Capstone</b></h1>
+
+</div>
 
 # 📗 Table of Contents
 
@@ -105,4 +110,4 @@ I would like to thank Microverse!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./MIT.md) licensed.
