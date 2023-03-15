@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .popup {
   position: fixed;
   background: #c1c7d090;
@@ -10,18 +14,18 @@
 }
 
 .window {
-  background: linear-gradient(-45deg, #ffba5f, #3da8ff);
+  background: linear-gradient(-45deg, #ffba5f, #5db1f7);
   position: absolute;
   left: 50%;
   top: 3rem;
   transform: translate(-50%, 0);
   width: 40%;
-  height: 90vh;
+  height: 85vh;
   border-radius: 10px;
   display: flex;
   padding: 2rem;
   flex-direction: column;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .image-popup {
@@ -35,22 +39,8 @@
   cursor: pointer;
   font-size: 32px;
   font-weight: 700;
-  font-family: 'Rubik', sans-serif;
   display: flex;
   justify-content: flex-end;
-  color: white;
-}
-
-.title {
-  font-family: 'Rubik', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 52px;
-  line-height: 44px;
-  color: #fc921a;
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
 }
 
 .details {
@@ -60,37 +50,28 @@
   margin-top: 30px;
 }
 
-.details a {
-  color: #fc921a;
-}
-
 .details a:hover {
   color: #fff;
 }
 
 .meal {
-  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
   line-height: 44px;
-  color: #fc921a;
 }
 
 .reservation {
-  font-family: 'Rubik', sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 32px;
   line-height: 44px;
   display: flex;
   margin-top: 20px;
   justify-content: center;
-  color: #fc921a;
 }
 
 .reservations {
-  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -103,25 +84,24 @@
   padding: 1rem 0;
   margin-bottom: 1rem;
   border-radius: 3rem;
-  color: #fc921a;
 }
 
 .header-reservation {
-  font-family: 'Rubik', sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 28px;
   line-height: 44px;
   display: flex;
   margin-top: 20px;
   justify-content: center;
-  color: #fc921a;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .name,
@@ -130,10 +110,8 @@
   font-size: 22px;
   font-family: 'Rubik', sans-serif;
   letter-spacing: 2.2px;
-  width: 780px;
-  max-width: 390px;
-  height: 40px;
-  border-radius: 55px 55px 55px 55px;
+  width: 100%;
+  border-radius: 10px 10px 10px 10px;
   border: 2px solid #fc921a;
   padding: 24px 41px 33px 36px;
   background-image: linear-gradient(180deg, #fffcfc1a 0%, #ededed 100%);
@@ -146,16 +124,11 @@
 }
 
 .btn-top {
-  color: #fff;
   margin-top: 20px;
   padding: 1rem 2rem;
-  border-radius: 55px;
-  background-color: #fc921a;
-  border: 2px solid #fff;
 }
 
-.btn-top:hover {
-  background-color: #fff;
-  border: 2px solid #fc921a;
-  color: #fc921a;
+.window .title {
+  font-size: 2rem;
+  text-align: center;
 }

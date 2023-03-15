@@ -1,4 +1,4 @@
-import { reservationsUrl } from './getApi';
+import { reservationsUrl } from '../getApi';
 
 global.fetch = () => Promise.resolve({
   json: () => Promise.resolve([

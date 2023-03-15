@@ -25,20 +25,20 @@ const renderComments = (data, itemId) => {
   <div class="food">
   <span id="close-comment">X</i></span>
     <div class="food-img">
-      <img src=${data.meals[0].strMealThumb} alt="">
-      <h2>${data.meals[0].strMeal}</h2>
+      <img class="image-popup" src=${data.meals[0].strMealThumb} alt="food">
+      <h2 class="title">${data.meals[0].strMeal}</h2>
     </div>
       <ul class="food-info">
         <li>
           <ul>
+          <li>Category: ${data.meals[0].strMeal}</li>
             <li>Category: ${data.meals[0].strCategory}</li>
-            <li>Area: ${data.meals[0].strArea}</li>
           </ul>
         </li>
         <li>
           <ul>
+          <li>Area: ${data.meals[0].strArea}</li>
             <li><a href=${data.meals[0].strYoutube}>How To Make</a></li>
-            <li>Power</li>
           </ul>
         </li>
       </ul>
@@ -51,9 +51,9 @@ const renderComments = (data, itemId) => {
       <form class="comments-form" id="comments-form" action="#" method="post">
       <h3>Add a Comment</h3>
         <label for="name"></label>
-        <input type="text" name="name" id="name" placeholder="Your Name">
+        <input type="text" name="name" id="name" placeholder="Your Name" required>
         <label for="insights"></label>
-        <textarea name="insights" id="insights" cols="30" rows="10" placeholder="Your Insights"></textarea>
+        <textarea name="insights" id="insights" cols="30" rows="5" placeholder="Your Insights" required></textarea>
         <button type="submit">Comment</button>
       </form>
     </div>
@@ -64,12 +64,16 @@ const renderComments = (data, itemId) => {
     e.preventDefault();
     postComments(itemId, form.name.value, form.insights.value).then(() => {
       loadComments(itemId);
+      form.name.value = '';
+      form.insights.value = '';
     });
   });
 
   const closeBtn = document.getElementById('close-comment');
   closeBtn.addEventListener('click', () => {
+    const bodyEl = document.querySelector('body');
     renderLocation.classList.add('disable');
+    bodyEl.classList.remove('no-scroll');
   });
 };
 
