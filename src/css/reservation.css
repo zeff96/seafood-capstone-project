@@ -59,9 +59,11 @@
   column-gap: 60px;
   margin-top: 30px;
 }
+
 .details a {
   color: #fc921a;
 }
+
 .details a:hover {
   color: #fff;
 }
@@ -151,6 +153,7 @@
   background-color: #fc921a;
   border: 2px solid #fff;
 }
+
 .btn-top:hover {
   background-color: #fff;
   border: 2px solid #fc921a;

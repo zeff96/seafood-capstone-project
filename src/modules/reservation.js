@@ -1,10 +1,9 @@
 import { getSeaFoodItem, reservationsUrl } from './getApi';
-import addReservation from './addReservation.js';
-import reservationCounter from './reserveCounter.js';
+import reservationCounter from './reserveCounter';
+import addReservation from './addReservation';
 
 const reservation = async (idMeal) => {
   try {
-    idMeal = '52959';
     const reservation = document.createElement('div');
     reservation.id = 'popup';
     reservation.classList = 'popup';
@@ -52,10 +51,11 @@ const reservation = async (idMeal) => {
           <p class="meal" id="meal">Area: ${strArea}</p>
           <p class="meal" id="meal"><a href="${strYoutube}">How to make it!</a></p>
           `;
-    const reserving = await fetch(reservationsUrl + '?item_id=' + idMeal);
+    const reserving = await fetch(`${reservationsUrl}?item_id=${idMeal}`);
     const reserve = await reserving.json();
 
     const reservationsHeader = document.createElement('h3');
+    // reservationsHeader.innerText = 'Reservations (0)';
     reservationsHeader.classList = 'reservation';
     const wrapper = document.createElement('div');
     wrapper.classList = 'reserve-counter';
@@ -120,11 +120,11 @@ const reservation = async (idMeal) => {
     }
 
     reserve.map((data) => {
-      const { username, date_start, date_end } = data;
+      const { username, date_start: dateStart, date_end: dateEnd } = data;
       const reservationsInput = document.createElement('p');
       reservationsInput.classList = 'reservations';
 
-      reservationsInput.innerText = `${date_start} to ${date_end} by ${username}`;
+      reservationsInput.innerText = `${dateStart} to ${dateEnd} by ${username}`;
       wrapper.appendChild(reservationsInput);
       return data;
     });
