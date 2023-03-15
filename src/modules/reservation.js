@@ -30,7 +30,9 @@ const reservation = async (idMeal) => {
     const meal = await fetch(getSeaFoodItem + idMeal);
     const { meals } = await meal.json();
     const data = meals.find((card) => card.idMeal === idMeal);
-    const { strMeal, strCategory, strArea, strMealThumb, strYoutube } = data;
+    const {
+      strMeal, strCategory, strArea, strMealThumb, strYoutube,
+    } = data;
     imagePopup.src = strMealThumb;
     imagePopup.classList = 'image-popup';
     imagePopup.id = 'image-popup';
@@ -97,7 +99,7 @@ const reservation = async (idMeal) => {
         reservationHeader,
         ReserveButton,
         reserveForm,
-        wrapper
+        wrapper,
       );
     });
 
