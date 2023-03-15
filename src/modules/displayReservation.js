@@ -1,4 +1,5 @@
 import { reservationsUrl } from './getApi';
+
 const displayReservations = async (
   idMeal,
   usernameInput,
@@ -9,10 +10,10 @@ const displayReservations = async (
   reservationHeader,
   ReserveButton,
   reserveForm,
-  wrapper
+  wrapper,
 ) => {
   try {
-    const reserving = await fetch(reservationsUrl + '?item_id=' + idMeal);
+    const reserving = await fetch(`${reservationsUrl}?item_id=${idMeal}`);
     const reserve = await reserving.json();
 
     reservationsHeader.innerText = `Reservations (${reserve.length})`;
@@ -29,11 +30,11 @@ const displayReservations = async (
     }
 
     reserve.map((data) => {
-      const { username, date_start, date_end } = data;
+      const { username, date_start: dateStart, date_end: dateEnd } = data;
       const reservationsInput = document.createElement('p');
       reservationsInput.classList = 'reservations';
 
-      reservationsInput.innerText = `${date_start} to ${date_end} by ${username}`;
+      reservationsInput.innerText = `${dateStart} to ${dateEnd} by ${username}`;
       wrapper.appendChild(reservationsInput);
       return data;
     });
