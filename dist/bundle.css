@@ -55,6 +55,8 @@
   display: flex;
   justify-content: space-between;
   font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 44px;
 }
 
 .food-container .comments-form {
@@ -110,11 +112,13 @@
 }
 
 #close-comment {
+  position: absolute;
+  top: 12%;
+  right: 18%;
   display: flex;
-  width: 100%;
   justify-content: end;
   cursor: pointer;
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 700;
   font-family: 'Rubik', sans-serif;
   color: black;
@@ -124,9 +128,14 @@
   .food-container .food {
     left: 50%;
     top: 3rem;
-    width: 40%;
+    width: 80%;
     height: 90vh;
-    padding: 2rem;
+    padding: 4rem;
+    align-items: center;
+  }
+
+  .custome-size {
+    width: 45%;
   }
 }
 
@@ -145,41 +154,53 @@
   height: 100vh;
 }
 
-.window {
+.customewindow {
   background: linear-gradient(-45deg, #ffba5f, #5db1f7);
   position: absolute;
   left: 50%;
   top: 3rem;
   transform: translate(-50%, 0);
-  width: 40%;
+  width: 80%;
   height: 85vh;
   border-radius: 10px;
-  display: flex;
   padding: 2rem;
+  display: flex;
   flex-direction: column;
   overflow-y: scroll;
+}
+
+.window {
+  position: absolute;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.popup-head {
+  padding-top: 2rem;
 }
 
 .image-popup {
   max-height: 30rem;
   border-radius: 12px;
   box-shadow: 0 12px 24px #212529;
-  margin-top: 20px;
 }
 
 .close {
+  position: absolute;
   cursor: pointer;
   font-size: 32px;
   font-weight: 700;
-  display: flex;
-  justify-content: flex-end;
+  top: 5%;
+  right: 15%;
+  z-index: 2;
 }
 
 .details {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 60px;
-  margin-top: 30px;
 }
 
 .details a:hover {
@@ -187,9 +208,8 @@
 }
 
 .meal {
-  font-style: normal;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 1.2rem;
   line-height: 44px;
 }
 
@@ -444,5 +464,10 @@ body {
 
 .title {
   font-size: 1.3rem;
+}
+
+.close:hover,
+#close-comment:hover {
+  color: white;
 }
 
