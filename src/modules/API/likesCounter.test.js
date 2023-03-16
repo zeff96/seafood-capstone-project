@@ -1,4 +1,4 @@
-import { getAllLikes } from "./getAllData";
+import { getAllLikes } from './getAllData';
 
 global.fetch = jest.fn(() => Promise.resolve({
   json: () => Promise.resolve(
@@ -18,9 +18,9 @@ global.fetch = jest.fn(() => Promise.resolve({
 }));
 
 describe('likes counter', () => {
-  it ('test likes counter', async () => {
+  it('test likes counter', async () => {
     const res = await getAllLikes();
 
     expect(res).toBe(2);
-  })
+  });
 });

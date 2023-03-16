@@ -112,8 +112,10 @@
 }
 
 #close-comment {
+  position: absolute;
+  top: 12%;
+  right: 18%;
   display: flex;
-  width: 100%;
   justify-content: end;
   cursor: pointer;
   font-size: 2rem;
@@ -128,10 +130,11 @@
     top: 3rem;
     width: 80%;
     height: 90vh;
-    padding: 2rem;
+    padding: 4rem;
     align-items: center;
   }
-  .custome-size{
+
+  .custome-size {
     width: 45%;
   }
 }

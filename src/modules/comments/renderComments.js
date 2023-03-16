@@ -22,8 +22,8 @@ const renderComments = (data, itemId) => {
   const renderLocation = document.getElementById('food-container');
   renderLocation.classList.remove('disable');
   renderLocation.innerHTML = `
-  <div class="food">
   <span id="close-comment">X</i></span>
+  <div class="food">
   <div class="custome-size">
     <div class="food-img">
       <img class="image-popup" src=${data.meals[0].strMealThumb} alt="food">

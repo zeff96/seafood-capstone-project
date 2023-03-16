@@ -8,16 +8,15 @@ const reservation = async (idMeal) => {
     reservation.id = 'popup';
     reservation.classList = 'popup';
     document.body.appendChild(reservation);
-
-    const customeWindow = document.createElement('div');
-    customeWindow.classList = 'customewindow';
-    reservation.appendChild(customeWindow);
-
     const xButton = document.createElement('p');
     xButton.id = 'close';
     xButton.classList = 'close';
     xButton.innerHTML = 'X';
-    customeWindow.appendChild(xButton);
+    reservation.appendChild(xButton);
+
+    const customeWindow = document.createElement('div');
+    customeWindow.classList = 'customewindow';
+    reservation.appendChild(customeWindow);
 
     // popup window
     const popupWindow = document.createElement('div');

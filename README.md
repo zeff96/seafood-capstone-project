@@ -54,19 +54,26 @@
 
 ## Getting Started
 
-### Clone this [repository](https://github.com/zeff96/Seafood-capstone-project) to your desired folder.
+### Setup
+
+Clone this repository to your desired folder:
+
+```sh
+  cd your-prefer-folder
+  git clone https://github.com/zeff96/Seafood-capstone-project
+```
 
 ### Run this command to install dependencies
 
 > npm install
 
-### Run this command to run server
-
-> npm start
-
 ### Run this command to build your webpack
 
 > npm run build
+
+### Run this command to run server
+
+> npm start
 
 ### Run this command to run test
 
