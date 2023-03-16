@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+.popup {
+  position: fixed;
+  background: #c1c7d090;
+  backdrop-filter: blur(4px);
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100vw;
+  height: 100vh;
+}
+
+.customewindow {
+  background: linear-gradient(-45deg, #ffba5f, #5db1f7);
+  position: absolute;
+  left: 50%;
+  top: 3rem;
+  transform: translate(-50%, 0);
+  width: 80%;
+  height: 85vh;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.window {
+  position: absolute;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.popup-head {
+  padding-top: 2rem;
+}
+
+.image-popup {
+  max-height: 30rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px #212529;
+}
+
+.close {
+  position: absolute;
+  cursor: pointer;
+  font-size: 32px;
+  font-weight: 700;
+  top: 5%;
+  right: 15%;
+  z-index: 2;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 60px;
+}
+
+.details a:hover {
+  color: #fff;
+}
+
+.meal {
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 44px;
+}
+
+.reservation {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.reservations {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 5px 5px 10px rgb(43 73 100);
+  border: 1px solid #fc921a;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-radius: 3rem;
+}
+
+.header-reservation {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 44px;
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.name,
+.textarea {
+  margin-top: 20px;
+  font-size: 22px;
+  font-family: 'Rubik', sans-serif;
+  letter-spacing: 2.2px;
+  width: 100%;
+  border-radius: 10px 10px 10px 10px;
+  border: 2px solid #fc921a;
+  padding: 24px 41px 33px 36px;
+  background-image: linear-gradient(180deg, #fffcfc1a 0%, #ededed 100%);
+  transition: all ease-out 0.3s;
+  line-height: 20px;
+}
+
+.textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.btn-top {
+  margin-top: 20px;
+  padding: 1rem 2rem;
+}
+
+.window .title {
+  font-size: 2rem;
+  text-align: center;
+}

@@ -1,0 +1,140 @@
+.food-container a {
+  text-decoration: none;
+}
+
+.food-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.food-container h3 {
+  text-align: center;
+  margin-bottom: 3%;
+  font-size: 2rem;
+}
+
+.food-container {
+  position: fixed;
+  inset: 0;
+  padding: 5% 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #c1c7d090;
+  backdrop-filter: blur(4px);
+}
+
+.food-container .food {
+  background: linear-gradient(-45deg, #ffba5f, #3da8ff);
+  padding: 5% 5%;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
+  overflow-y: auto;
+  border-radius: 10px;
+}
+
+.food-container .food-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.food-container .food-img .title {
+  font-size: 2rem;
+}
+
+.food-container .food-img img {
+  width: 100%;
+}
+
+.food-container .food-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 44px;
+}
+
+.food-container .comments-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+}
+
+.food-container .comments-form input,
+.food-container .comments-form textarea {
+  margin-top: 20px;
+  font-size: 22px;
+  font-family: 'Rubik', sans-serif;
+  letter-spacing: 2.2px;
+  border-radius: 10px 10px 10px 10px;
+  border: 2px solid #fc921a;
+  padding: 24px 41px 33px 36px;
+  background-image: linear-gradient(180deg, #fffcfc1a 0%, #ededed 100%);
+  transition: all ease-out 0.3s;
+  line-height: 20px;
+}
+
+.food-container .comments-form button {
+  margin-top: 20px;
+  align-self: center;
+  background-color: #5e5df0;
+  color: #fff;
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.8rem;
+}
+
+#comments li {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1rem;
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 5px 5px 10px rgb(43 73 100);
+  border: 1px solid #fc921a;
+  padding: 1rem 0;
+  border-radius: 3rem;
+}
+
+.disable {
+  display: none;
+}
+
+#close-comment {
+  position: absolute;
+  top: 12%;
+  right: 18%;
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Rubik', sans-serif;
+  color: black;
+}
+
+@media all and (min-width: 768px) {
+  .food-container .food {
+    left: 50%;
+    top: 3rem;
+    width: 80%;
+    height: 90vh;
+    padding: 4rem;
+    align-items: center;
+  }
+
+  .custome-size {
+    width: 45%;
+  }
+}
