@@ -1,3 +1,5 @@
+import { likesUrl } from "../getApi";
+
 const getAllData = async () => {
   const response = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood');
   const getJsonObj = await response.json();
@@ -5,4 +7,11 @@ const getAllData = async () => {
   return result.length;
 };
 
-export default getAllData;
+const getAllLikes = async () => {
+  const res = await fetch(likesUrl);
+  const getJsonObj = await res.json();
+
+  return getJsonObj.length;
+}
+
+export { getAllData, getAllLikes };

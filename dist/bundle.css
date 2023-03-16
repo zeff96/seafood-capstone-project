@@ -267,7 +267,6 @@
 
 :root {
   --primary-color: rgb(125, 188, 240);
-  --secondary-color: ;
   --text-color: #000;
 }
 
@@ -407,7 +406,7 @@
 }
 
 .meals-counter::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 5rem;
   border: 1px solid black;

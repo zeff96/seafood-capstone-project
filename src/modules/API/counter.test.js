@@ -1,4 +1,4 @@
-import getAllData from './getMeals';
+import { getAllData} from './getAllData';
 
 global.fetch = jest.fn(() => Promise.resolve({
   json: () => Promise.resolve(
