@@ -34,3 +34,8 @@ body {
 .title {
   font-size: 1.3rem;
 }
+
+.close:hover,
+#close-comment:hover{
+  color: white;
+}

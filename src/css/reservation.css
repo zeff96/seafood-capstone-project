@@ -12,20 +12,34 @@
   width: 100vw;
   height: 100vh;
 }
-
-.window {
+.customewindow{
   background: linear-gradient(-45deg, #ffba5f, #5db1f7);
   position: absolute;
   left: 50%;
   top: 3rem;
   transform: translate(-50%, 0);
-  width: 40%;
+  width: 70%;
   height: 85vh;
   border-radius: 10px;
   display: flex;
   padding: 2rem;
   flex-direction: column;
   overflow-y: scroll;
+}
+.window {
+  /* background: linear-gradient(-45deg, #ffba5f, #5db1f7); */
+  position: absolute;
+  /* left: 50%; */
+  /* top: 3rem; */
+  /* transform: translate(-50%, 0); */
+  width: 45%;
+  /* height: 85vh; */
+  /* border-radius: 10px; */
+  display: flex;
+  /* padding: 2rem; */
+  flex-direction: column;
+  /* overflow-y: scroll; */
+  align-self: center;
 }
 
 .image-popup {
@@ -47,7 +61,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 60px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .details a:hover {
@@ -55,9 +69,9 @@
 }
 
 .meal {
-  font-style: normal;
+  /* font-style: normal; */
   font-weight: 400;
-  font-size: 28px;
+  font-size: 1.2rem;
   line-height: 44px;
 }
 

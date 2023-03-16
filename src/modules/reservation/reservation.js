@@ -9,22 +9,26 @@ const reservation = async (idMeal) => {
     reservation.classList = 'popup';
     document.body.appendChild(reservation);
 
+    const customeWindow = document.createElement('div');
+    customeWindow.classList = 'customewindow';
+    reservation.appendChild(customeWindow);
+
+    const xButton = document.createElement('p');
+    xButton.id = 'close';
+    xButton.classList = 'close';
+    xButton.innerHTML = 'X';
+    customeWindow.appendChild(xButton);
+
     // popup window
     const popupWindow = document.createElement('div');
     popupWindow.classList = 'window';
-    reservation.appendChild(popupWindow);
+    customeWindow.appendChild(popupWindow);
 
     const popupHead = document.createElement('div');
     popupHead.classList = 'popup-head';
     popupHead.id = 'popup-head';
 
     popupWindow.appendChild(popupHead);
-
-    const xButton = document.createElement('p');
-    xButton.id = 'close';
-    xButton.classList = 'close';
-    xButton.innerHTML = 'X';
-    popupHead.appendChild(xButton);
 
     const imagePopup = document.createElement('img');
     const meal = await fetch(getSeaFoodItem + idMeal);
