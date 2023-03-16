@@ -1,4 +1,8 @@
+/**
+ * @jest-environment jsdom
+ */
 import { reservationsUrl } from '../getApi';
+import reservationCounter from './reserveCounter';
 
 global.fetch = () => Promise.resolve({
   json: () => Promise.resolve([
@@ -22,5 +26,15 @@ describe('Testing resevations counter', () => {
     const reserve = await reserving.json();
     const size = reserve.length;
     expect(size).toBe(2);
+  });
+
+  test('zero count reservations', async () => {
+    document.body.innerHTML = '<div>'
+    + '<h3 class="reservation"></h3>'
+    + '  <div class="reserve-counter"></div>'
+    + '</div>';
+    reservationCounter();
+    const header = document.querySelector('.reservation');
+    expect(header.innerText).toBe('Reservations(0)');
   });
 });

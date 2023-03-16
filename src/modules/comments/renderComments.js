@@ -24,6 +24,7 @@ const renderComments = (data, itemId) => {
   renderLocation.innerHTML = `
   <div class="food">
   <span id="close-comment">X</i></span>
+  <div class="custome-size">
     <div class="food-img">
       <img class="image-popup" src=${data.meals[0].strMealThumb} alt="food">
       <h2 class="title">${data.meals[0].strMeal}</h2>
@@ -31,7 +32,7 @@ const renderComments = (data, itemId) => {
       <ul class="food-info">
         <li>
           <ul>
-          <li>Category: ${data.meals[0].strMeal}</li>
+          <li>Meal: ${data.meals[0].strMeal}</li>
             <li>Category: ${data.meals[0].strCategory}</li>
           </ul>
         </li>
@@ -56,6 +57,7 @@ const renderComments = (data, itemId) => {
         <textarea name="insights" id="insights" cols="30" rows="5" placeholder="Your Insights" required></textarea>
         <button type="submit">Comment</button>
       </form>
+    </div>
     </div>
   </div>`;
 
